@@ -1,0 +1,80 @@
+# /var/lib/tftpboot/vmware/vmware.menu
+
+
+# /vmware/esxi550/pxefiles/mboot.c32 is compatible with syslinux 4.06
+# but not 6.02.  Make sure pxelinux.0 is from the correct syslinux
+# version.
+
+
+menu title VMware Menu (vmware/vmware.menu)
+menu include pxelinux.cfg/graphics.conf
+
+
+LABEL esxi60u1
+        MENU LABEL ESXi 6.0 Update 1
+        KERNEL /vmware/esxi60u1/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi60u1/pxefiles/boot.cfg
+        TEXT HELP
+	Memory 4 GB minimum.
+	Number of processors: 1, Number of cores per processor: 2
+	[x] Virtualize Intel VT-x/EPT or AMD-V/RVI
+        ENDTEXT
+
+LABEL esxi600
+        MENU LABEL ESXi 6.0.0
+        KERNEL /vmware/esxi600/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi600/pxefiles/boot.cfg
+        TEXT HELP
+	Memory 4 GB minimum.
+	Number of processors: 1, Number of cores per processor: 2
+	[x] Virtualize Intel VT-x/EPT or AMD-V/RVI
+        ENDTEXT
+
+LABEL esxi550u1
+        MENU LABEL ESXi 5.5.0 Update 1
+        KERNEL /vmware/esxi550u1/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi550u1/pxefiles/boot.cfg
+        TEXT HELP
+	Requires 4 GB RAM minimum.
+        ENDTEXT
+
+LABEL esxi510u2
+        MENU LABEL ESXi 5.1.0 Update 2
+        KERNEL /vmware/esxi510u2/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi510u2/pxefiles/boot.cfg
+        TEXT HELP
+	Requires 4 GB RAM minimum.
+        ENDTEXT
+
+LABEL esxi500u3
+        MENU LABEL ESXi 5.0.0 Update 3
+        KERNEL /vmware/esxi500u3/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi500u3/pxefiles/boot.cfg
+        TEXT HELP
+	Requires 4 GB RAM minimum.
+        ENDTEXT
+
+LABEL esxi500
+        MENU LABEL ESXi 5.0.0
+        KERNEL /vmware/esxi500/pxefiles/mboot.c32
+        APPEND -c /vmware/esxi500/pxefiles/boot.cfg
+        TEXT HELP
+	Requires 4 GB RAM minimum.
+        ENDTEXT
+
+LABEL esx41
+  menu label ESX 4.1
+  kernel mboot.c32
+  append vmkboot.gz ks=http://www.paonet.org/rpao/pub/vmware/esxi410u1/ks.cfg --- vmkernel.gz --- sys.vgz --- cim.vgz --- ienviron.vgz --- install.vgz
+  text help
+  This selection does not work.  Set the
+  bootfile: /vmware/esxi410u1/pxefiles/pxelinux.0
+  endtext
+
+label main
+        menu label E^xit to main menu
+	kernel /syslinux-4.06/menu.c32
+        append pxelinux.cfg/default
+	text help
+	Return to the main menu.
+	endtext

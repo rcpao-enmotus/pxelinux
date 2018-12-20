@@ -1,0 +1,60 @@
+# /var/lib/tftpboot/fedora/fedora.menu
+
+# Thu May  2 16:06:43 PDT 2013
+
+
+menu title Fedora (fedora/fedora.menu)
+#menu include pxelinux.cfg/graphics.conf
+
+
+# http://unix.stackexchange.com/questions/186302/fedora-network-install-via-pxe-boot
+
+label Fedora-Workstation-Live-x86_64-25-1.3.iso 
+  menu label Fedora-Workstation-Live-x86_64-25-1.3.iso (bfo ok,slow; use cd)
+  kernel /fedora/Fedora-Workstation-Live-x86_64-25-1.3.iso/images/pxeboot/vmlinuz
+  append initrd=/fedora/Fedora-Workstation-Live-x86_64-25-1.3.iso/images/pxeboot/initrd.img inst.stage2=http://pixi-efi.rs.paonet.org/tftpboot/fedora/Fedora-Workstation-Live-x86_64-25-1.3.iso/
+  text help
+  Fedora-Workstation-Live-x86_64-25-1.3.iso Failed to start Switch Root.
+  endtext
+
+label Fedora-Server-dvd-x86_64-25-1.3.iso
+  menu label Fedora-Server-dvd-x86_64-25-1.3.iso
+  kernel /fedora/Fedora-Server-dvd-x86_64-25-1.3.iso/images/pxeboot/vmlinuz
+  append initrd=/fedora/Fedora-Server-dvd-x86_64-25-1.3.iso/images/pxeboot/initrd.img inst.stage2=http://pixi-efi.rs.paonet.org/tftpboot/fedora/Fedora-Server-dvd-x86_64-25-1.3.iso/
+  text help
+  Fedora-Server-dvd-x86_64-25-1.3.iso
+  endtext
+
+label Fedora-Workstation-Live-x86_64-24-1.2.iso 
+  menu label Fedora-Workstation-Live-x86_64-24-1.2.iso (shutdown; bfo fail; use cd)
+  kernel /fedora/Fedora-Workstation-Live-x86_64-24-1.2.iso/images/pxeboot/vmlinuz
+  append initrd=/fedora/Fedora-Workstation-Live-x86_64-24-1.2.iso/images/pxeboot/initrd.img inst.stage2=http://pixi-efi.rs.paonet.org/tftpboot/fedora/Fedora-Workstation-Live-x86_64-24-1.2.iso/
+  text help
+  Fedora-Workstation-Live-x86_64-24-1.2.iso
+  endtext
+
+label Fedora-Server-dvd-x86_64-24-1.2.iso
+  menu label Fedora-Server-dvd-x86_64-24-1.2.iso
+  kernel /fedora/Fedora-Server-dvd-x86_64-24-1.2.iso/images/pxeboot/vmlinuz
+  append initrd=/fedora/Fedora-Server-dvd-x86_64-24-1.2.iso/images/pxeboot/initrd.img inst.stage2=http://pixi-efi.rs.paonet.org/tftpboot/fedora/Fedora-Server-dvd-x86_64-24-1.2.iso/
+  text help
+  Fedora-Server-dvd-x86_64-24-1.2.iso
+  endtext
+
+
+# https://fedoraproject.org/wiki/Talk:Features/boot.fedoraproject.org?rd=Talk:Features/BFO
+label 1
+  menu label boot.fedoraproject.org (BFO; only latest 3)
+  root (hd0,0)
+  kernel /fedora/bfo.lkrn
+  text help
+  boot.fedoraproject.org (BFO) internet install
+  endtext
+
+label main
+  menu label E^xit to main menu
+  kernel /syslinux-4.06/menu.c32
+  append /pxelinux.cfg/default
+  text help
+  Return to the main menu.
+  endtext

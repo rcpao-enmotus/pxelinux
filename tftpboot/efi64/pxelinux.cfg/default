@@ -77,7 +77,9 @@ label ubuntu
 	#fail kernel /efi64/menu.c32
 	#fail kernel efi64/menu.c32
 	kernel menu.c32 #pass
-        append pxelinux.cfg/graphics.conf ubuntu/ubuntu-efi.menu
+        #pass: append pxelinux.cfg/graphics.conf pxelinux.cfg/ubuntu-efi.menu
+        #fail: append ubuntu-efi.menu
+        append pxelinux.cfg/ubuntu-efi.menu
 	text help
 	Ubuntu desktop and server
 	endtext

@@ -1,0 +1,41 @@
+# /var/lib/tftpboot/proxmox.com/proxmox.menu
+
+
+# /vmware/esxi550/pxefiles/mboot.c32 is compatible with syslinux 4.06
+# but not 6.02.  Make sure pxelinux.0 is from the correct syslinux
+# version.
+
+
+menu title Proxmox Menu (proxmox.com/proxmox.menu)
+menu include pxelinux.cfg/graphics.conf
+
+
+LABEL proxmox-ve_4.2-725d76f0-28.iso
+        MENU LABEL proxmox-ve_4.2-725d76f0-28.iso
+        linux /proxmox.com/pxeboot-4.2/linux26
+        append vga=791 video=vesafb:ywrap,mtrr ramdisk_size=524288
+        initrd /proxmox.com/pxeboot-4.2/initrd.iso.img splash=verbose
+        TEXT HELP
+	Memory 1 GB minimum, 8 GB good.
+	Number of processors: 1, Number of cores per processor: 1
+	[x] Virtualize Intel VT-x/EPT or AMD-V/RVI
+        ENDTEXT
+
+LABEL proxmox-ve_4.1-2f9650d4-21.iso
+        MENU LABEL proxmox-ve_4.1-2f9650d4-21.iso
+        linux /proxmox.com/pxeboot-4.1/linux26
+        append vga=791 video=vesafb:ywrap,mtrr ramdisk_size=524288
+        initrd /proxmox.com/pxeboot-4.1/initrd.iso.img splash=verbose
+        TEXT HELP
+	Memory 1 GB minimum, 8 GB good.
+	Number of processors: 1, Number of cores per processor: 1
+	[x] Virtualize Intel VT-x/EPT or AMD-V/RVI
+        ENDTEXT
+
+label main
+        menu label E^xit to main menu
+	kernel /syslinux-4.06/menu.c32
+        append pxelinux.cfg/default
+	text help
+	Return to the main menu.
+	endtext
