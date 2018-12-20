@@ -1,0 +1,295 @@
+# /var/lib/tftpboot/efi64/pxeconfig.cfg/ubuntu.menu
+
+# Sat Oct 27 12:22:45 PDT 2012
+
+
+menu title Ubuntu (/efi64/pxeconfig.cfg/ubuntu-efi.menu)
+#menu include pxelinux.cfg/graphics.conf
+
+
+# http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+
+# WARNING: Ubuntu has different directory paths to the initrd.lz file for
+#          desktop versus server CDs.
+
+
+# Sat Oct 29 04:21:15 PDT 2016
+label ubuntu-16.04.4-desktop-amd64.iso
+  menu label ubuntu-16.04.4-desktop-amd64.iso Live CD
+  kernel ubuntu/ubuntu-16.04.4-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04.4-desktop-amd64.iso initrd=ubuntu/ubuntu-16.04.4-desktop-amd64.iso/casper/initrd.lz -- 
+  text help
+  Boot ubuntu-16.04.4-desktop-amd64.iso Live CD
+  endtext
+
+# Sat Oct 29 04:21:15 PDT 2016
+label ubuntu-16.04.4-desktop-amd64.iso rescue
+  menu label ubuntu-16.04.4-desktop-amd64.iso Live CD Rescue Mode
+  kernel ubuntu/ubuntu-16.04.4-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04.4-desktop-amd64.iso initrd=ubuntu/ubuntu-16.04.4-desktop-amd64.iso/casper/initrd.lz rescue/enable=true -- 
+  text help
+  Boot ubuntu-16.04.4-desktop-amd64.iso Live CD Rescue Mode
+  endtext
+
+# Sat Oct 29 04:21:15 PDT 2016
+label ubuntu-16.04.4-server-amd64.iso
+  menu label ubuntu-16.04.4-server-amd64.iso 
+  kernel ubuntu/ubuntu-16.04.4-server-amd64.iso/install/vmlinuz
+  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04.4-server-amd64.iso initrd=ubuntu/ubuntu-16.04.4-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+  text help
+  Boot ubuntu-16.04.4-server-amd64.iso
+  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+  endtext
+
+
+# Fri Apr 22 13:55:21 PDT 2016
+label ubuntu-16.04-desktop-amd64.iso
+  menu label ubuntu-16.04-desktop-amd64.iso Live CD
+  kernel ubuntu/ubuntu-16.04-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04-desktop-amd64.iso initrd=ubuntu/ubuntu-16.04-desktop-amd64.iso/casper/initrd.lz -- 
+  text help
+  Boot ubuntu-16.04-desktop-amd64.iso Live CD
+  endtext
+
+# Fri Apr 22 13:55:21 PDT 2016
+label ubuntu-16.04-desktop-amd64.iso rescue
+  menu label ubuntu-16.04-desktop-amd64.iso Live CD Rescue Mode
+  kernel ubuntu/ubuntu-16.04-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04-desktop-amd64.iso initrd=ubuntu/ubuntu-16.04-desktop-amd64.iso/casper/initrd.lz rescue/enable=true -- 
+  text help
+  Boot ubuntu-16.04-desktop-amd64.iso Live CD Rescue Mode
+  endtext
+
+## Fri Apr 22 13:55:21 PDT 2016
+#label ubuntu-16.04-server-amd64.iso
+#  menu label ubuntu-16.04-server-amd64.iso 
+#  kernel ubuntu/ubuntu-16.04-server-amd64.iso/install/vmlinuz
+#  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-16.04-server-amd64.iso initrd=ubuntu/ubuntu-16.04-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+#  text help
+#  Boot ubuntu-16.04-server-amd64.iso
+#  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+#  endtext
+
+
+
+# Sat Oct 29 04:28:47 PDT 2016
+label ubuntu-14.04.5-desktop-amd64.iso
+  menu label ubuntu-14.04.5-desktop-amd64.iso Live CD
+  kernel ubuntu/ubuntu-14.04.5-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.5-desktop-amd64.iso initrd=ubuntu/ubuntu-14.04.5-desktop-amd64.iso/casper/initrd.lz -- 
+  text help
+  Boot ubuntu-14.04.5-desktop-amd64.iso Live CD
+  endtext
+
+# Sat Oct 29 04:28:47 PDT 2016
+label ubuntu-14.04.5-desktop-amd64.iso rescue
+  menu label ubuntu-14.04.5-desktop-amd64.iso Live CD Rescue Mode
+  kernel ubuntu/ubuntu-14.04.5-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.5-desktop-amd64.iso initrd=ubuntu/ubuntu-14.04.5-desktop-amd64.iso/casper/initrd.lz rescue/enable=true -- 
+  text help
+  Boot ubuntu-14.04.5-desktop-amd64.iso Live CD Rescue Mode
+  endtext
+
+## Sat Oct 29 04:28:47 PDT 2016
+#label ubuntu-14.04.5-server-amd64.iso
+#  menu label ubuntu-14.04.5-server-amd64.iso 
+#  kernel ubuntu/ubuntu-14.04.5-server-amd64.iso/install/vmlinuz
+#  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.5-server-amd64.iso initrd=ubuntu/ubuntu-14.04.5-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+#  text help
+#  Boot ubuntu-14.04.5-server-amd64.iso
+#  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+#  endtext
+
+
+## Tue Apr 19 19:51:20 PDT 2016
+#label ubuntukylin-14.04.4-desktop-amd64.iso
+#  menu label ubuntukylin-14.04.4-desktop-amd64.iso Live CD
+#  kernel ubuntu/ubuntukylin-14.04.4-desktop-amd64.iso/casper/vmlinuz.efi
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntukylin-14.04.4-desktop-amd64.iso initrd=ubuntu/ubuntukylin-14.04.4-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntukylin-14.04.4-desktop-amd64.iso Live CD
+#  endtext
+
+
+## Sat Nov 21 22:13:35 PST 2015
+#label ubuntu-14.04.3-desktop-amd64.iso
+#  menu label ubuntu-14.04.3-desktop-amd64.iso Live CD
+#  kernel ubuntu/ubuntu-14.04.3-desktop-amd64.iso/casper/vmlinuz.efi
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.3-desktop-amd64.iso initrd=ubuntu/ubuntu-14.04.3-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-14.04.3-desktop-amd64.iso Live CD
+#  endtext
+
+## Sat Nov 21 22:13:35 PST 2015
+#label ubuntu-14.04.3-desktop-i386.iso
+#  menu label ubuntu-14.04.3-desktop-i386.iso Live CD
+#  kernel ubuntu/ubuntu-14.04.3-desktop-i386.iso/casper/vmlinuz
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.3-desktop-i386.iso initrd=ubuntu/ubuntu-14.04.3-desktop-i386.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-14.04.3-desktop-i386.iso Live CD
+#  endtext
+
+## Sat Nov 21 22:13:47 PST 2015
+#label ubuntu-14.04.3-server-amd64.iso
+#  menu label ubuntu-14.04.3-server-amd64.iso 
+#  kernel ubuntu/ubuntu-14.04.3-server-amd64.iso/install/vmlinuz
+#  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.3-server-amd64.iso initrd=ubuntu/ubuntu-14.04.3-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+#  text help
+#  Boot ubuntu-14.04.3-server-amd64.iso
+#  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+#  endtext
+
+
+## Fri Mar 13 23:27:53 PDT 2015
+#label ubuntu-14.04.2-desktop-amd64.iso
+#  menu label ubuntu-14.04.2-desktop-amd64.iso Live CD
+#  kernel ubuntu/ubuntu-14.04.2-desktop-amd64.iso/casper/vmlinuz.efi
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.2-desktop-amd64.iso initrd=ubuntu/ubuntu-14.04.2-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-14.04.2-desktop-amd64.iso Live CD
+#  endtext
+
+## Tue Feb 24 20:28:02 PST 2015
+#label xubuntu-14.04.2-desktop-amd64.iso
+#  menu label xubuntu-14.04.2-desktop-amd64.iso Live CD
+#  kernel xubuntu/xubuntu-14.04.2-desktop-amd64.iso/casper/vmlinuz.efi
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/xubuntu/xubuntu-14.04.2-desktop-amd64.iso initrd=xubuntu/xubuntu-14.04.2-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot xubuntu-14.04.2-desktop-amd64.iso Live CD
+#  endtext
+
+## Mon Apr 13 12:34:45 PDT 2015
+#label ubuntu-14.04.2-server-amd64.iso
+#  menu label ubuntu-14.04.2-server-amd64.iso 
+#  kernel ubuntu/ubuntu-14.04.2-server-amd64.iso/install/vmlinuz
+#  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.2-server-amd64.iso initrd=ubuntu/ubuntu-14.04.2-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+#  text help
+#  Boot ubuntu-14.04.2-server-amd64.iso
+#  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+#  endtext
+
+## Sat May  9 15:00:28 PDT 2015
+#label ubuntu-14.04.2-server-amd64.iso-preseed
+#  menu label ubuntu-14.04.2-server-amd64.iso-preseed
+#  kernel ubuntu/ubuntu-14.04.2-server-amd64.iso/install/vmlinuz
+#  #append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.2-server-amd64.iso initrd=ubuntu/ubuntu-14.04.2-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz  ramdisk_size=14984 locale=en_US console-setup/layoutcode=en_US netcfg/wireless_wep= netcfg/chose_interface=eth0 netcfg/get_hostname= url=tftp://172.17.2.79/ubuntu/preseed/14.04/preseed-14.04-server.cfg
+#  #append auto=true priority=critical vga=788 initrd=tftp://10.0.11.250/images/ubuntu/14.04/amd64/install/netboot/ubuntu-installer/amd64/initrd.gz locale=en_US.UTF-8 kbd-chooser/method=us netcfg/choose_interface=auto url=tftp://172.16.11.250/preseed.cfg
+#  append auto=true boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04.2-server-amd64.iso initrd=ubuntu/ubuntu-14.04.2-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz  netcfg/get_hostname=unconfiguredhostname netcfg/get_domain=unconfigureddomain netcfg/wireless_wep= pkgsel/include=apache2 url=tftp://172.17.2.79/ubuntu/preseed/14.04/preseed-14.04-server-20150509a.cfg
+#  text help
+#  ubuntu-14.04.2-server-amd64.iso (slow!)
+#  http://www.cyberciti.biz/faq/howto-see-shares-on-nfs-server-exported-filesystems/
+#  tftp://172.17.2.79/ubuntu/preseed/14.04/preseed-14.04-server.cfg
+#  http://wernerstrydom.com/2014/05/25/automatically-installing-ubuntu-server-14-04-tftp/
+#  Server: apache2
+#  endtext
+
+
+# Mon May 19 15:24:16 PDT 2014
+label ubuntu-14.04-desktop-amd64.iso
+  menu label ubuntu-14.04-desktop-amd64.iso Live CD
+  kernel ubuntu/ubuntu-14.04-desktop-amd64.iso/casper/vmlinuz.efi
+  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04-desktop-amd64.iso initrd=ubuntu/ubuntu-14.04-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+  text help
+  Boot ubuntu-14.04-desktop-amd64.iso Live CD
+  endtext
+
+## Mon Apr 13 12:35:02 PDT 2015
+#label ubuntu-14.04-server-amd64.iso
+#  menu label ubuntu-14.04-server-amd64.iso 
+#  kernel ubuntu/ubuntu-14.04-server-amd64.iso/install/vmlinuz
+#  append boot=install netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-14.04-server-amd64.iso initrd=ubuntu/ubuntu-14.04-server-amd64.iso/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+#  text help
+#  Boot ubuntu-14.04-server-amd64.iso
+#  endtext
+
+
+## Sat Mar 79 14:04:39 PDT 2014
+#label ubuntu-12.04.4-desktop-amd64.iso
+#  menu label ubuntu-12.04.4-desktop-amd64.iso Live CD 
+#  kernel ubuntu/ubuntu-12.04.4-desktop-amd64.iso/casper/vmlinuz.efi
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-12.04.4-desktop-amd64.iso initrd=ubuntu/ubuntu-12.04.4-desktop-amd64.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-12.04.4-desktop-amd64.iso Live CD
+#  endtext
+#
+## Sat Mar 79 14:04:39 PDT 2014
+#label ubuntu-12.04.4-desktop-i386.iso
+#  menu label ubuntu-12.04.4-desktop-i386.iso Live CD 
+#  kernel ubuntu/ubuntu-12.04.4-desktop-i386.iso/casper/vmlinuz
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-12.04.4-desktop-i386.iso initrd=ubuntu/ubuntu-12.04.4-desktop-i386.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-12.04.4-desktop-i386.iso Live CD
+#  (initramfs) Unable to find a live file system on the network
+#  endtext
+
+
+# http://www.howtogeek.com/61263/how-to-network-boot-pxe-the-ubuntu-livecd/
+# Wed Jan 16 19:47:79 PST 2013
+#label ubuntu-10.04.4-desktop-i386.iso
+#  menu label ubuntu-10.04.4-desktop-i386.iso Live CD (works)
+#  kernel ubuntu/ubuntu-10.04.4-desktop-i386.iso/casper/vmlinuz
+#  append boot=casper netboot=nfs nfsroot=172.17.2.79:/var/lib/tftpboot/ubuntu/ubuntu-10.04.4-desktop-i386.iso initrd=ubuntu/ubuntu-10.04.4-desktop-i386.iso/casper/initrd.lz -- splash quiet
+#  text help
+#  Boot ubuntu-10.04.4-desktop-i386.iso Live CD
+#  endtext
+
+
+label ubuntu-14.04-netboot-amd64-preseed
+  menu label ubuntu-14.04-netboot-amd64-preseed
+  kernel /syslinux-4.06/pxechain.com
+  append ::ubuntu/trusty/main/installer-amd64/current/images/netboot/
+  config ::ubuntu/trusty/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/pxelinux.cfg/default
+  text help
+  WARNING: Retrieves all files from network (very slow)
+  Desktop: not implemented yet
+  Server: apache2
+
+  /var/lib/tftpboot/ubuntu/trusty/main/installer-amd64/current/images/_
+    netboot/ubuntu-installer/amd64/boot-screens/txt.cfg
+  tftp://172.17.2.79/ubuntu/preseed/14.04/preseed-14.04-{desktop,server}.cfg
+  http://www.syslinux.org/wiki/index.php/Common_Problems#pxechain.com-2
+  endtext
+
+
+#label ubuntu1204-x86_64-netboot-preseed
+#  menu label Ubuntu 12.04 x86_64 netboot preseed (not working)
+#  kernel /syslinux-4.06/pxechain.com
+#  append ::ubuntu/precise/main/installer-amd64/current/images/netboot/pxelinux.0 ramdisk_size=14984 locale=en_US console-setup/layoutcode=en_US netcfg/wireless_wep= netcfg/chose_interface=eth0 netcfg/get_hostname= url=http://www.paonet.org/rpao/pub/inet/ubuntu.com/12.04/preseed.txt 
+#  #append ::ubuntu/precise/main/installer-amd64/current/images/netboot/pxelinux.0 ramdisk_size=14984 locale=en_US console-setup/layoutcode=en_US netcfg/wireless_wep= netcfg/chose_interface=eth0 netcfg/get_hostname= url=http://www.paonet.org/rpao/pub/inet/ubuntu.com/12.04/preseed.txt 
+#  text help
+#  Boot Ubuntu 12.04 x86_64 netboot preseed
+#  /var/lib/tftpboot/ubuntu/precise/main/installer-amd64/current/images/_
+#    netboot/ubuntu-installer/amd64/boot-screens/txt.cfg
+#  http://www.paonet.org/rpao/pub/inet/ubuntu.com/12.04/preseed.txt
+#  endtext
+#
+#label ubuntu1204-x86_64-netboot
+#  menu label Ubuntu 12.04 x86_64 netboot (preseeded internet install)
+#  kernel /syslinux-4.06/pxechain.com
+#  append ::ubuntu/precise/main/installer-amd64/current/images/netboot/pxelinux.0
+#  text help
+#  Boot Ubuntu 12.04 x86_64 netboot install with preseeded option (not Live CD)
+#  /var/lib/tftpboot/ubuntu/precise/main/installer-amd64/current/images/_
+#    netboot/ubuntu-installer/amd64/boot-screens/txt.cfg
+#  http://www.paonet.org/rpao/pub/inet/ubuntu.com/12.04/preseed.txt
+#  endtext
+#
+#label ubuntu-lucid-netboot
+#  menu label Ubuntu 10.04(lucid) netboot (preseeded internet install)
+#  kernel /syslinux-4.06/pxechain.com
+#  append ::ubuntu/lucid/main/install/netboot/pxelinux.0
+#  text help
+#  Boot Ubuntu 10.04(lucid) Server, Xubuntu desktop, Mythbuntu, ..., netboot install with preseeded option (not Live CD)
+#  /var/lib/tftpboot/ubuntu/lucid/main/install/netboot/ubuntu-installer/_
+#    amd64/boot-screens/text.cfg
+#  http://www.paonet.org/rpao/pub/inet/ubuntu.com/10.04-lucid_lynx/_
+#    10.04-preseed-server-amd64.txt
+#  endtext
+
+label main
+  menu label E^xit to main menu
+  kernel menu.c32
+  append /pxelinux.cfg/default
+  text help
+  Return to the main menu.
+  endtext

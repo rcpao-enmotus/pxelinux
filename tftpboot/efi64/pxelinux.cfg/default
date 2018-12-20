@@ -1,0 +1,110 @@
+# /var/lib/tftpboot/pxelinux.cfg/default
+
+# http://www.syslinux.org/wiki/index.php/PXELINUX#Custom_Menu_Example_with_sub-menus
+# obs https://help.ubuntu.com/community/PXEInstallMultiDistro
+
+
+# tftp server ip: 172.17.2.35
+# filename: efi64/syslinux.efi
+
+
+#pass: default /syslinux-6.04-pre1/efi64/com32/menu/menu.c32
+#fail: default /efi64/menu.c32
+#pass: default /menu.c32
+default menu.c32
+#prompt 0
+
+menu title pixi-efi Main Menu (/efi64/pxelinux.cfg/default)
+menu clear
+#menu include /efi64/pxelinux.cfg/graphics.conf
+#menu autoboot Booting local system in # seconds
+
+label bootLocal
+	menu label ^Boot local hard disk
+	menu default
+        localboot 0
+	#timeout 80
+	#totaltimeout 9000
+	text help
+	Boot the local hard disk.
+	endtext
+
+#label projects
+#        menu label ^Projects
+#	kernel /syslinux-4.06/menu.c32
+#        append projects.menu
+#	text help
+#	Projects
+#	endtext
+
+#label tools
+#        menu label ^Tools
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/tools.menu
+#	text help
+#	Tools and Utilities
+#	endtext
+
+#label centos
+#        menu label ^CentOS
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/graphics.conf centos/centos.menu
+#	text help
+#	CentOS 5.11, 6.5, 7.0
+#	endtext
+
+#label debian
+#        menu label ^Debian
+#	kernel /syslinux-4.06/menu.c32 
+#	# kernel /syslinux-6.03/efi64/com32/menu/menu.c32 #menu.c32 not a COM32R image
+#	# kernel /syslinux-6.03/efi32/com32/menu/menu.c32 #menu.c32 not a COM32R image
+#	# kernel /syslinux-6.03/bios/com32/menu/menu.c32 #menu.c32 not a COM32R image
+#        append pxelinux.cfg/graphics.conf debian/debian.menu
+#	text help
+#	Debian wheezy-7, jessie-8, sid/unstable
+#	endtext
+
+#label fedora
+#        menu label ^Fedora
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/graphics.conf fedora/fedora.menu
+#	text help
+#	boot.fedoraproject.org (BFO), Server 23
+#	endtext
+
+label ubuntu
+        menu label ^Ubuntu
+	#fail kernel /efi64/menu.c32
+	#fail kernel efi64/menu.c32
+	kernel menu.c32 #pass
+        append pxelinux.cfg/graphics.conf ubuntu/ubuntu-efi.menu
+	text help
+	Ubuntu desktop and server
+	endtext
+
+# tftp server ip: 172.17.2.35
+# filename: /vmware/esxi500/pxefiles/pxelinux.0
+#label vmware 
+#        menu label ^VMware ESXi
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/graphics.conf vmware/vmware.menu 
+#	text help
+#	VMware ESXi 4.1.0u1, 5.0.0{,u3}, 5.1.0u2, 5.5.0u1, 6.0.0{,u1}
+#	endtext
+
+#label proxmox 
+#        menu label Proxmox Virtual Environment (VE)
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/graphics.conf proxmox.com/proxmox.menu 
+#	text help
+#	Proxmox VE 4.1
+#	endtext
+
+#label tv
+#        menu label TV
+#	kernel /syslinux-4.06/menu.c32
+#        append pxelinux.cfg/tv.menu
+#	text help
+#	MythTV, OpenELEC, XBMC
+#	endtext
+
