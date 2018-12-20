@@ -2,6 +2,8 @@
 
 # https://www.syslinux.org/wiki/index.php?title=PXELINUX#Custom_Menu_Example_with_sub-menus
 
+# https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.xz
+# https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.xz
 # pwd=/home/rcpao/Download/syslinux-6.04-pre1
 
 TFTPBOOTDIR=../tftpboot 
