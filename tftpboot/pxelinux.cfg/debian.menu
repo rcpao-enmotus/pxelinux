@@ -24,9 +24,9 @@ menu title Debian (debian/debian.menu)
 # Mon Apr 13 21:48:01 PDT 2015
 label debian-sid/unstable-amd64-netboot
   menu label debian-sid/^unstable-amd64-netboot (not a COM32R image)
-  kernel /syslinux-4.06/pxechain.com
-  append ::debian/sid/
-  config ::debian/sid/pxelinux.cfg/default
+  kernel pxechain.com
+  append ::common/debian/sid/
+  config ::common/debian/sid/pxelinux.cfg/default
   text help
   http://ftp.us.debian.org/debian/dists/sid/main/installer-amd64/current/images/netboot/netboot.tar.gz
   debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
@@ -35,8 +35,8 @@ label debian-sid/unstable-amd64-netboot
 # Thu Jun  4 00:22:14 PDT 2015
 label debian-8-jessie-i386
   menu label debian-^8-jessie i386 netboot mini.iso
-  kernel /syslinux-4.06/memdisk
-  append initrd=/debian/jessie/netboot/mini.iso
+  kernel memdisk
+  append initrd=common/debian/jessie/netboot/mini.iso
   text help
   http://ftp.us.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/mini.iso
   endtext
@@ -44,14 +44,14 @@ label debian-8-jessie-i386
 # Mon Apr 13 21:22:12 PDT 2015
 label debian-8-jessie-amd64
   menu label debian-^8-jessie amd64 netboot (not a COM32R image)
-  # kernel debian/jessie/pxelinux.0 #PXELINUX 6.03 PXE 20150107 #debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
-  # kernel debian/jessie/debian-installer/amd64/pxelinux.0 #PXELINUX 6.03 PXE 20150107 #Failed to load COM32R file /syslinux-4..06/menu.c32
-  # kernel /syslinux-4.06/pxechain.com #debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
-  # kernel /syslinux-6.02/pxechn.c32 #vesamenu.c32: not a COM32R image
-  # kernel /syslinux-6.03/bios/com32/modules/pxechn.c32 #vesamenu.c32: not a COM32R image
-  kernel /syslinux-6.03/bios/com32/modules/pxechn.c32 /debian/jessie/pxelinux.0 -c /debian/jessie/pxelinux.cfg/default
-  append ::debian/jessie/
-  config ::debian/jessie/pxelinux.cfg/default
+  # kernel common/debian/jessie/pxelinux.0 #PXELINUX 6.03 PXE 20150107 #debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
+  # kernel common/debian/jessie/debian-installer/amd64/pxelinux.0 #PXELINUX 6.03 PXE 20150107 #Failed to load COM32R file menu.c32
+  # kernel pxechain.com #debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
+  # kernel pxechn.c32 #vesamenu.c32: not a COM32R image
+  # kernel bios/com32/modules/pxechn.c32 #vesamenu.c32: not a COM32R image
+  kernel bios/com32/modules/pxechn.c32 common/debian/jessie/pxelinux.0 -c common/debian/jessie/pxelinux.cfg/default
+  append ::common/debian/jessie/
+  config ::common/debian/jessie/pxelinux.cfg/default
   text help
   http://ftp.us.debian.org/debian/dists/jessie/main/installer-amd64/current/images/netboot/netboot.tar.gz
   debian-installer/amd64/boot-screens/vesamenu.c32: not a COM32R image
@@ -60,17 +60,17 @@ label debian-8-jessie-amd64
 # Wed Apr  1 00:36:20 PDT 2015
 label debian-7-wheezy/stable-amd64-netboot
   menu label debian-^7-wheezy/stable-amd64-netboot
-  kernel /syslinux-4.06/pxechain.com
-  append ::debian/wheezy/
-  config ::debian/wheezy/pxelinux.cfg/default
+  kernel pxechain.com
+  append ::common/debian/wheezy/
+  config ::common/debian/wheezy/pxelinux.cfg/default
   text help
   http://ftp.nl.debian.org/debian/dists/wheezy/main/installer-amd64/current/images/netboot/netboot.tar.gz
   endtext
 
 label main
   menu label E^xit to main menu
-  kernel /syslinux-4.06/menu.c32
-  append /pxelinux.cfg/default
+  kernel menu.c32
+  append pxelinux.cfg/default
   text help
   Return to the main menu.
   endtext

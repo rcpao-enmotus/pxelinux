@@ -1,0 +1,30 @@
+
+menu title Projects (projects.menu)
+menu include pxelinux.cfg/graphics.conf
+
+label mbrlspci_memdisk602
+        menu label mbrlspci (syslinux 6.02 memdisk NoInt13hExt)
+	kernel memdisk
+	initrd mbrlspci/mbrlspci.img
+	append harddisk
+	text help
+	Boot mbrlspci.img hard disk image.
+	NoInt13hExt if booted as floppy image.
+	No PCI devices found in VMware Guest.
+	endtext
+
+label mbrlspci_memdisk405
+        menu label mbrlspci (syslinux 4.06 memdisk NoInt13hExt)
+	kernel memdisk
+	initrd mbrlspci/mbrlspci.img
+	append harddisk
+	text help
+	Boot mbrlspci.img hard disk image.
+	NoInt13hExt if booted as floppy image.
+	No PCI devices found in VMware Guest.
+	endtext
+
+label main
+        menu label E^xit to main menu
+	kernel menu.c32
+        append pxelinux.cfg/default

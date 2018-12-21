@@ -22,7 +22,7 @@ cp ./bios/com32/menu/menu.c32 $BIOSDIR
 cp ./bios/com32/libutil/libutil.c32 $BIOSDIR
 
 # cp ./efi32/efi/syslinux.efi $EFI32DIR
-# #cp ./efi32/efi/syslinux.efi $EFI32DIR/bootx32.efi
+# #cp ./efi32/efi/syslinux.efi $EFI32DIR/bootia32.efi
 # cp ./efi32/com32/elflink/ldlinux/ldlinux.e32 $EFI32DIR
 # cp ./efi32/com32/menu/menu.c32 $EFI32DIR
 # cp ./efi32/com32/libutil/libutil.c32 $EFI32DIR

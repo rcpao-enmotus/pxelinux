@@ -13,7 +13,7 @@ default menu.c32
 #prompt 0
 
 menu title pixi-efi Main Menu (pxelinux.cfg/default)
-menu include pxelinux.cfg/graphics.conf
+#menu include pxelinux.cfg/graphics.conf
 #menu autoboot Booting local system in # seconds
 
 label bootLocal
@@ -29,7 +29,8 @@ label bootLocal
 label projects
         menu label ^Projects
 	kernel menu.c32
-        append projects.menu
+        # append pxelinux.cfg/graphics.conf pxelinux.cfg/projects.menu
+        append pxelinux.cfg/projects.menu
 	text help
 	Projects
 	endtext
@@ -45,7 +46,7 @@ label tools
 label centos
         menu label ^CentOS
 	kernel menu.c32
-        append pxelinux.cfg/graphics.conf pxelinux.cfg/centos.menu
+        append pxelinux.cfg/centos.menu
 	text help
 	CentOS 5.11, 6.5, 7.0
 	endtext
@@ -56,7 +57,7 @@ label debian
 	# kernel /syslinux-6.03/efi64/com32/menu/menu.c32 #menu.c32 not a COM32R image
 	# kernel /syslinux-6.03/efi32/com32/menu/menu.c32 #menu.c32 not a COM32R image
 	# kernel /syslinux-6.03/bios/com32/menu/menu.c32 #menu.c32 not a COM32R image
-        append pxelinux.cfg/graphics.conf pxelinux.cfg/debian.menu
+        append pxelinux.cfg/debian.menu
 	text help
 	Debian wheezy-7, jessie-8, sid/unstable
 	endtext
@@ -64,7 +65,7 @@ label debian
 label fedora
         menu label ^Fedora
 	kernel menu.c32
-        append pxelinux.cfg/graphics.conf pxelinux.cfg/fedora.menu
+        append pxelinux.cfg/fedora.menu
 	text help
 	boot.fedoraproject.org (BFO), Server 23
 	endtext
@@ -82,7 +83,7 @@ label ubuntu
 label vmware 
         menu label ^VMware ESXi
 	kernel menu.c32
-        append pxelinux.cfg/graphics.conf pxelinux.cfg/vmware.menu 
+        append pxelinux.cfg/vmware.menu 
 	text help
 	VMware ESXi 4.1.0u1, 5.0.0{,u3}, 5.1.0u2, 5.5.0u1, 6.0.0{,u1}
 	endtext
@@ -90,7 +91,7 @@ label vmware
 label proxmox 
         menu label Proxmox Virtual Environment (VE)
 	kernel menu.c32
-        append pxelinux.cfg/graphics.conf pxelinux.cfg/proxmox.menu 
+        append pxelinux.cfg/proxmox.menu 
 	text help
 	Proxmox VE 4.1
 	endtext

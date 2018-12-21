@@ -1,9 +1,9 @@
-# /var/lib/tftpboot/centos/centos.menu
+# /var/lib/tftpboot/common/centos/centos.menu
 
 # Wed Apr  1 00:36:20 PDT 2015
 
 
-menu title CentOS (centos/centos.menu)
+menu title CentOS (common/centos/centos.menu)
 #menu include pxelinux.cfg/graphics.conf
 
 
@@ -12,9 +12,9 @@ menu title CentOS (centos/centos.menu)
 
 # Sat Jun  6 11:46:33 PDT 2015
 label CentOS-7.0-1406-x86_64-DVD.iso
-	menu label CentOS-7.0-1406-x86_64-DVD.iso
-	kernel centos/CentOS-7.0-1406-x86_64-DVD.iso/isolinux/vmlinuz
-	append initrd=centos/CentOS-7.0-1406-x86_64-DVD.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://pixi-efi.rs.paonet.org/tftpboot/centos/CentOS-7.0-1406-x86_64-DVD.ks
+	menu label CentOS-7.0-1406-x86_64-DVD.iso (fail)
+	kernel common/centos/CentOS-7.0-1406-x86_64-DVD.iso/isolinux/vmlinuz
+	append initrd=common/centos/CentOS-7.0-1406-x86_64-DVD.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://172.17.2.79/tftpboot/common/centos/CentOS-7.0-1406-x86_64-DVD.ks
 	text help
 	http://mirror.us.leaseweb.net/centos/5.11/isos/x86_64/
 	https://www.centos.org/forums/viewtopic.php?t=12521
@@ -23,12 +23,12 @@ label CentOS-7.0-1406-x86_64-DVD.iso
 
 # Tue Apr 14 15:11:37 PDT 2015
 label CentOS-6.5-x86_64-LiveCD.iso
-	menu label CentOS-6.5-x86_64-LiveCD.iso
-	#kernel /syslinux-4.06/pxechain.com
-	#append ::centos/sid/
-	#config ::centos/sid/pxelinux.cfg/default
-	kernel centos/CentOS-6.5-x86_64-LiveCD.iso/isolinux/vmlinuz0
-	append noapic initrd=centos/CentOS-6.5-x86_64-LiveCD.iso/isolinux/initrd0.img root=/dev/ram0 init=/linuxrc ramdisk_size=100000
+	menu label CentOS-6.5-x86_64-LiveCD.iso (fail)
+	#kernel pxechain.com
+	#append ::common/centos/sid/
+	#config ::common/centos/sid/pxelinux.cfg/default
+	kernel common/centos/CentOS-6.5-x86_64-LiveCD.iso/isolinux/vmlinuz0
+	append noapic initrd=common/centos/CentOS-6.5-x86_64-LiveCD.iso/isolinux/initrd0.img root=/dev/ram0 init=/linuxrc ramdisk_size=100000
 	text help
 	http://ftp.us.debian.org/debian/dists/sid/main/installer-amd64/current/images/netboot/netboot.tar.gz
 	endtext
@@ -36,8 +36,9 @@ label CentOS-6.5-x86_64-LiveCD.iso
 # Sat Jun  6 11:46:33 PDT 2015
 label CentOS-5.11-x86_64-bin-DVD-1of2.iso
 	menu label CentOS-5.11-x86_64-bin-DVD-1of2.iso
-	kernel centos/CentOS-5.11-x86_64-bin-DVD-1of2.iso/isolinux/vmlinuz
-	append initrd=centos/CentOS-5.11-x86_64-bin-DVD-1of2.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://pixi-efi.rs.paonet.org/tftpboot/centos/CentOS-5.11-x86_64-bin-DVD-1of2.ks
+	kernel common/centos/CentOS-5.11-x86_64-bin-DVD-1of2.iso/isolinux/vmlinuz
+	#append initrd=common/centos/CentOS-5.11-x86_64-bin-DVD-1of2.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://pixi-efi.rs.paonet.org/tftpboot/common/centos/CentOS-5.11-x86_64-bin-DVD-1of2.ks
+	append initrd=common/centos/CentOS-5.11-x86_64-bin-DVD-1of2.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://172.17.2.79/tftpboot/common/centos/CentOS-5.11-x86_64-bin-DVD-1of2.ks
 	text help
 	http://mirror.us.leaseweb.net/centos/5.11/isos/x86_64/
 	https://www.centos.org/forums/viewtopic.php?t=12521
@@ -47,10 +48,10 @@ label CentOS-5.11-x86_64-bin-DVD-1of2.iso
 # Sat Jun  6 07:47:52 PDT 2015
 label CentOS-5.11-x86_64-bin-1of9.iso
 	menu label CentOS-5.11-x86_64-bin-1of9.iso (lz... missing)
-	kernel centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/vmlinuz
-	#append noapic initrd=/centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img root=/dev/ram0 init=/linuxrc ramdisk_size=100000
-	#append initrd=centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=nfs:pixi-efi.rs.paonet.org:/var/lib/tftpboot/centos/CentOS-5.11-x86_64-bin-1of9.ks
-	append initrd=centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://pixi-efi.rs.paonet.org/tftpboot/centos/CentOS-5.11-x86_64-bin-1of9.ks
+	kernel common/centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/vmlinuz
+	#append noapic initrd=/common/centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img root=/dev/ram0 init=/linuxrc ramdisk_size=100000
+	#append initrd=common/centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=nfs:pixi-efi.rs.paonet.org:/var/lib/tftpboot/common/centos/CentOS-5.11-x86_64-bin-1of9.ks
+	append initrd=common/centos/CentOS-5.11-x86_64-bin-1of9.iso/isolinux/initrd.img ramdisk_size=100000 ip=dhcp ks=http://172.17.2.79/tftpboot/common/centos/CentOS-5.11-x86_64-bin-1of9.ks
 	text help
 	http://mirror.us.leaseweb.net/centos/5.11/isos/x86_64/
 	https://www.centos.org/forums/viewtopic.php?t=12521
@@ -60,8 +61,8 @@ label CentOS-5.11-x86_64-bin-1of9.iso
 # Sat Jun  6 07:47:30 PDT 2015
 label CentOS-5.11-x86_64-netinstall.iso
         menu label CentOS-5.11-x86_64-netinstall.iso (not useful)
-	linux /syslinux-4.06/memdisk
-        initrd /centos/CentOS-5.11-x86_64-netinstall.iso
+	linux memdisk
+        initrd centos/CentOS-5.11-x86_64-netinstall.iso
         append iso vmalloc=256M
 	text help
 	http://mirror.us.leaseweb.net/centos/5.11/isos/x86_64/
@@ -70,8 +71,8 @@ label CentOS-5.11-x86_64-netinstall.iso
 
 label main
 	menu label E^xit to main menu
-	kernel /syslinux-4.06/menu.c32
-	append /pxelinux.cfg/default
+	kernel menu.c32
+	append pxelinux.cfg/default
 	text help
 	Return to the main menu.
 	endtext
