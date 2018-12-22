@@ -5,13 +5,13 @@ menu include pxelinux.cfg/graphics.conf
 label fdboot.img
         menu label FreeDOS 1.0 Floppy fdboot.img
 	kernel memdisk
-        append initrd=common/FreeDOS/fdboot.img floppy raw
+        append initrd=1/FreeDOS/fdboot.img floppy raw
 
 
 #label Memtest86-6.3.0.usb
 #        menu label Memtest86-6.3.0.usb
 #	kernel memdisk
-#        initrd common/memtest.org/Memtest86-6.3.0/memtest86-usb.img
+#        initrd 1/memtest.org/Memtest86-6.3.0/memtest86-usb.img
 #        append iso vmalloc=256M
 #	text help
 #	MEMDISK: bootstrap too large to load
@@ -20,7 +20,7 @@ label fdboot.img
 label Memtest86-6.3.0.iso
         menu label Memtest86-6.3.0.iso
 	kernel memdisk
-        initrd common/memtest.org/Memtest86-6.3.0/Memtest86-6.3.0.iso
+        initrd 1/memtest.org/Memtest86-6.3.0/Memtest86-6.3.0.iso
         append iso vmalloc=256M
 	text help
 	http://www.memtest86.com/download.htm
@@ -29,17 +29,17 @@ label Memtest86-6.3.0.iso
 
 label memtest86+-5.01
         menu label memtest86+-5.01
-        kernel common/memtest.org/memtest86+-5.01 #.bin extension will fail
+        kernel 1/memtest.org/memtest86+-5.01 #.bin extension will fail
 
 label memtest86+-4.20
         menu label memtest86+-4.20
-        kernel common/memtest.org/memtest86+-4.20 #.bin extension will fail
+        kernel 1/memtest.org/memtest86+-4.20 #.bin extension will fail
 
 
 label plpbt.img
         menu label Plop Boot Manager plpbt.img
 	kernel memdisk
-        append initrd=common/plop.at/plpbt.img
+        append initrd=1/plop.at/plpbt.img
 	text help
 	https://www.plop.at/en/bootmanagers.html
 	* USB boot without BIOS support (UHCI, OHCI and EHCI)
@@ -52,7 +52,7 @@ label ubcd536.iso
         menu label Ultimate Boot CD ubcd536.iso 
 	# like pfsense
 	 linux memdisk
-         initrd common/ultimatebootcd.com/ubcd536.iso
+         initrd 1/ultimatebootcd.com/ubcd536.iso
          append iso vmalloc=512M stack=2048
 	text help
 	http://www.ultimatebootcd.com/download.html
@@ -63,7 +63,7 @@ label ubcdlive023b.iso
         menu label Ultimate Boot CD Live *BETA* ubcdlive023b.iso (fail)
 	# like pfsense
 	 linux memdisk
-         initrd common/ultimatebootcd.com/ubcdlive023b.iso
+         initrd 1/ultimatebootcd.com/ubcdlive023b.iso
          append iso vmalloc=512M stack=2048
 	text help
 	http://www.ultimatebootcd.com/ubcdlive.html
@@ -76,7 +76,7 @@ label Hiren's BootCD PE x64 (v1.0.1) HBCD_PE_x64.iso
 	menu label Hiren's BootCD PE x64 (v1.0.1) HBCD_PE_x64.iso (fail)
 	# like pfsense
 	 linux memdisk
-	 initrd common/hirensbootcd.org/Hirens_BootCD_PE_x64_v1.0.1/HBCD_PE_x64.iso
+	 initrd 1/hirensbootcd.org/Hirens_BootCD_PE_x64_v1.0.1/HBCD_PE_x64.iso
          append iso vmalloc=512M stack=2048
 	text help
 	http://www.hirensbootcd.org/download/
@@ -87,7 +87,7 @@ label Hiren's.BootCD.15.2.iso
 	menu label Hiren's.BootCD.15.2.iso
 	# like pfsense
 	 linux memdisk
-	 initrd common/hirensbootcd.org/Hirens.BootCD.15.2/Hiren's.BootCD.15.2.iso
+	 initrd 1/hirensbootcd.org/Hirens.BootCD.15.2/Hiren's.BootCD.15.2.iso
          append iso vmalloc=512M stack=2048
 	text help
 	http://www.hirensbootcd.org/download/
@@ -97,8 +97,8 @@ label Hiren's.BootCD.15.2.iso
 # 
 label clonezilla-live-20161121-yakkety-amd64.zip
         menu label clonezilla-live-20161121-yakkety-amd64.zip 
-	kernel common/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/vmlinuz
-        append initrd=common/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/initrd.img boot=live username=user union=overlay config components quiet noswap edd=on nomodeset nodmraid locales= keyboard-layouts= ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=no net.ifnames=0 nosplash noprompt fetch=http://pixi-efi.rs.paonet.org/tftpboot/common/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/filesystem.squashfs
+	kernel 1/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/vmlinuz
+        append initrd=1/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/initrd.img boot=live username=user union=overlay config components quiet noswap edd=on nomodeset nodmraid locales= keyboard-layouts= ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=no net.ifnames=0 nosplash noprompt fetch=http://pixi-efi.rs.paonet.org/tftpboot/1/clonezilla.org/clonezilla-live-20161121-yakkety-amd64/live/filesystem.squashfs
 	text help
 	alternative_testing amd64 zip
 	http://clonezilla.org/livepxe.php
@@ -164,21 +164,21 @@ label clonezilla-live-20161121-yakkety-amd64.zip
 # Fri Dec 21 12:31:49 PST 2018
 label systemrescuecd-x86-5.3.2.iso 
         menu label systemrescuecd-x86-5.3.2.iso 
-        kernel common/sysresccd.org/systemrescuecd-x86-5.3.2/rescue32
-        append initrd=common/sysresccd.org/systemrescuecd-x86-5.3.2/initram.igz netboot=http://pixi-efi.rs.paonet.org/tftpboot/common/sysresccd.org/systemrescuecd-x86-5.3.2/sysrcd.dat
+        kernel 1/sysresccd.org/systemrescuecd-x86-5.3.2/rescue32
+        append initrd=1/sysresccd.org/systemrescuecd-x86-5.3.2/initram.igz netboot=http://pixi-efi.rs.paonet.org/tftpboot/1/sysresccd.org/systemrescuecd-x86-5.3.2/sysrcd.dat
 
 # Tue Mar 27 09:35:37 PDT 2018
 #label systemrescuecd-x86-5.2.1.iso 
 #        menu label systemrescuecd-x86-5.2.1.iso 
-#        kernel common/sysresccd.org/systemrescuecd-x86-5.2.1/rescue32
-#        append initrd=common/sysresccd.org/systemrescuecd-x86-5.2.1/initram.igz netboot=http://pixi-efi.rs.paonet.org/tftpboot/common/sysresccd.org/systemrescuecd-x86-5.2.1/sysrcd.dat
+#        kernel 1/sysresccd.org/systemrescuecd-x86-5.2.1/rescue32
+#        append initrd=1/sysresccd.org/systemrescuecd-x86-5.2.1/initram.igz netboot=http://pixi-efi.rs.paonet.org/tftpboot/1/sysresccd.org/systemrescuecd-x86-5.2.1/sysrcd.dat
 
 
 # 
 label pfSense-LiveCD-2.2.2-RELEASE-amd64-20150413-2010.iso
         menu label pfSense-LiveCD-2.2.2-RELEASE-amd64-20150413-2010.iso (fail)
 	linux memdisk
-        initrd common/pfsense.org/pfSense-LiveCD-2.2.2-RELEASE-amd64-20150413-2010.iso
+        initrd 1/pfsense.org/pfSense-LiveCD-2.2.2-RELEASE-amd64-20150413-2010.iso
         append iso vmalloc=512M stack=2048
 	text help
 	panic: free: guard1 fail @ ...
@@ -188,13 +188,13 @@ label pfSense-LiveCD-2.2.2-RELEASE-amd64-20150413-2010.iso
 # 
 label gparted-live-0.26.1-5-amd64.zip
         menu label gparted-live-0.26.1-5-amd64.zip
-        kernel common/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/vmlinuz
-        append initrd=common/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/initrd.img boot=live config components union=overlay username=user noswap noeject ip= vga=788 fetch=http://pixi-efi.rs.paonet.org/tftpboot/common/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/filesystem.squashfs
+        kernel 1/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/vmlinuz
+        append initrd=1/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/initrd.img boot=live config components union=overlay username=user noswap noeject ip= vga=788 fetch=http://pixi-efi.rs.paonet.org/tftpboot/1/gparted-sf.net/gparted-live-0.26.1-5-amd64/live/filesystem.squashfs
 
 label gparted-live-0.26.1-5-i686.zip
         menu label gparted-live-0.26.1-5-i686.zip
-        kernel common/gparted-sf.net/gparted-live-0.26.1-5-i686/live/vmlinuz
-        append initrd=common/gparted-sf.net/gparted-live-0.26.1-5-i686/live/initrd.img boot=live config components union=overlay username=user noswap noeject ip= vga=788 fetch=http://pixi-efi.rs.paonet.org/tftpboot/common/gparted-sf.net/gparted-live-0.26.1-5-i686/live/filesystem.squashfs
+        kernel 1/gparted-sf.net/gparted-live-0.26.1-5-i686/live/vmlinuz
+        append initrd=1/gparted-sf.net/gparted-live-0.26.1-5-i686/live/initrd.img boot=live config components union=overlay username=user noswap noeject ip= vga=788 fetch=http://pixi-efi.rs.paonet.org/tftpboot/1/gparted-sf.net/gparted-live-0.26.1-5-i686/live/filesystem.squashfs
 
 
 
@@ -202,11 +202,11 @@ label gparted-live-0.26.1-5-i686.zip
 label ipfire.org_ipxe.iso
         menu label ipfire.org_ipxe.iso
 	#fail kernel pxechain.com
-	#fail append ::/var/lib/tftpboot/common/ipfire.org/undionly.kpxe
-	#fail kernel /var/lib/tftpboot/common/ipfire.org/undionly.kpxe
-	#fail kernel /var/lib/tftpboot/common/ipfire.org/ipxe.kpxe
+	#fail append ::/var/lib/tftpboot/1/ipfire.org/undionly.kpxe
+	#fail kernel /var/lib/tftpboot/1/ipfire.org/undionly.kpxe
+	#fail kernel /var/lib/tftpboot/1/ipfire.org/ipxe.kpxe
 	linux memdisk
-	initrd common/ipfire.org/ipxe.iso
+	initrd 1/ipfire.org/ipxe.iso
         append iso vmalloc=512M stack=2048
 	text help
 	http://wiki.ipfire.org/en/installation/pxe
@@ -217,7 +217,7 @@ label ipfire.org_ipxe.iso
 label SeaToolsDOS223ALL.ISO
         menu label Seagate SeaTools for DOS SeaToolsDOS223ALL.ISO
 	linux memdisk
-        initrd common/SeaToolsDOS/SeaToolsDOS223ALL.ISO
+        initrd 1/SeaToolsDOS/SeaToolsDOS223ALL.ISO
         append iso vmalloc=256M
 	text help
 	SeaTools for DOS only works with IDE. It will not find any AHCI drives.

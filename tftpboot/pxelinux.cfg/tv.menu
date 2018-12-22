@@ -4,23 +4,23 @@ menu include pxelinux.cfg/graphics.conf
 
 label 4
         menu label OpenELEC-Generic_OSS.i386-2.99.1
-	kernel common/openelec.tv/OpenELEC-Generic_OSS.i386-2.99.1/target/KERNEL
-        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/common/openelec.tv/OpenELEC-Generic_OSS.i386-2.99.1/target disk=NFS=172.17.2.29:/nfs/common/openelec.tv/disk overlay nosplash ssh debugging
+	kernel 1/openelec.tv/OpenELEC-Generic_OSS.i386-2.99.1/target/KERNEL
+        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/1/openelec.tv/OpenELEC-Generic_OSS.i386-2.99.1/target disk=NFS=172.17.2.29:/nfs/1/openelec.tv/disk overlay nosplash ssh debugging
 
 label 3
         menu label OpenELEC-Generic_OSS.i386-2.0.0
-	kernel common/openelec.tv/OpenELEC-Generic_OSS.i386-2.0.0/target/KERNEL
-        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/common/openelec.tv/OpenELEC-Generic_OSS.i386-2.0.0/target disk=NFS=172.17.2.29:/nfs/common/openelec.tv/disk overlay nosplash ssh debugging
+	kernel 1/openelec.tv/OpenELEC-Generic_OSS.i386-2.0.0/target/KERNEL
+        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/1/openelec.tv/OpenELEC-Generic_OSS.i386-2.0.0/target disk=NFS=172.17.2.29:/nfs/1/openelec.tv/disk overlay nosplash ssh debugging
 
 label 2
         menu label OpenELEC-Generic.i386-2.99.1 (hangs)
-	kernel common/openelec.tv/OpenELEC-Generic.i386-2.99.1/target/KERNEL
-        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/common/openelec.tv/OpenELEC-Generic.i386-2.99.1/target disk=NFS=172.17.2.29:/nfs/common/openelec.tv/disk overlay nosplash ssh debugging
+	kernel 1/openelec.tv/OpenELEC-Generic.i386-2.99.1/target/KERNEL
+        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/1/openelec.tv/OpenELEC-Generic.i386-2.99.1/target disk=NFS=172.17.2.29:/nfs/1/openelec.tv/disk overlay nosplash ssh debugging
 
 label 1
         menu label OpenELEC-Generic.i386-2.0.0 (hangs)
-	kernel common/openelec.tv/OpenELEC-Generic.i386-2.0.0/target/KERNEL
-        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/common/openelec.tv/OpenELEC-Generic.i386-2.0.0/target disk=NFS=172.17.2.29:/nfs/common/openelec.tv/disk overlay nosplash ssh debugging
+	kernel 1/openelec.tv/OpenELEC-Generic.i386-2.0.0/target/KERNEL
+        append ip=dhcp boot=NFS=172.17.2.29:/var/lib/tftpboot/1/openelec.tv/OpenELEC-Generic.i386-2.0.0/target disk=NFS=172.17.2.29:/nfs/1/openelec.tv/disk overlay nosplash ssh debugging
 
 label main
         menu label E^xit to main menu

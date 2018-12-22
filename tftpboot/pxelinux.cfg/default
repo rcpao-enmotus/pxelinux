@@ -4,6 +4,9 @@
 # obs https://help.ubuntu.com/community/PXEInstallMultiDistro
 
 
+# common/ renamed to 1/ because CentOS 5 http_path_to_*.ks was too long, but 1/ just makes it.
+
+
 # tftp server ip: 172.17.2.35
 # filename: pxelinux.0
 
