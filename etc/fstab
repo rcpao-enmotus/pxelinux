@@ -1,0 +1,3 @@
+
+# /etc/fstab additions for PXE boot / NFS exporting
+/home/rcpao/Download/ubuntu.com/ubuntu-16.04.4-desktop-amd64.iso /var/lib/tftpboot/ZbSaC4puw7-outgoing/iso/ubuntu-16.04.4-desktop-amd64.iso iso9660 loop,ro,auto 0 0
