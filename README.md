@@ -1,2 +1,2 @@
 # pxelinux
-syslinux pxelinux pxe boot server tftpboot directory
+syslinux pxelinux pxe boot server tftpboot 
