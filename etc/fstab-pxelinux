@@ -1,3 +1,10 @@
 
 # /etc/fstab additions for PXE boot / NFS exporting
+
+# /etc/exports for NFS exports for Ubuntu PXE boot
 /home/rcpao/Download/ubuntu.com/ubuntu-16.04.4-desktop-amd64.iso /var/lib/tftpboot/iso/ubuntu-16.04.4-desktop-amd64.iso iso9660 loop,ro,auto 0 0
+
+/home/rcpao/pub/inet/sysresccd.org/systemrescuecd-x86-5.3.2.iso /var/lib/tftpboot/1/sysresccd.org/systemrescuecd-x86-5.3.2.iso udf,iso9660 user,loop 0 0 
+
+# Windows 10
+/home/rcpao/pub/inet/microsoft.com/Windows_10/en_windows_10_business_edition_version_1809_updated_sept_2018_x64_dvd_d57f2c0d.iso /var/lib/tftpboot/1/win/win10/1809 udf,iso9660 user,loop 0 0 

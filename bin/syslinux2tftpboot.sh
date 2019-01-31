@@ -34,6 +34,7 @@ cp ./bios/memdisk/memdisk $BIOSDIR
 cp ./bios/com32/elflink/ldlinux/ldlinux.c32 $BIOSDIR
 cp ./bios/com32/menu/menu.c32 $BIOSDIR
 cp ./bios/com32/libutil/libutil.c32 $BIOSDIR
+cp ./bios/com32/mboot/mboot.c32 $BIOSDIR
 
 # cp ./efi32/efi/syslinux.efi $EFI32DIR
 # #cp ./efi32/efi/syslinux.efi $EFI32DIR/bootia32.efi
@@ -46,6 +47,7 @@ cp ./efi64/efi/syslinux.efi $EFI64DIR
 cp ./efi64/com32/elflink/ldlinux/ldlinux.e64 $EFI64DIR
 cp ./efi64/com32/menu/menu.c32 $EFI64DIR
 cp ./efi64/com32/libutil/libutil.c32 $EFI64DIR
+cp ./efi64/com32/mboot/mboot.c32 $EFI64DIR
 
 
 popd
