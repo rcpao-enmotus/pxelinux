@@ -1,0 +1,26 @@
+# /var/lib/tftpboot/pxelinux.cfg/win-efi.menu
+
+# Fri Jan 11 21:24:45 PST 2019
+
+
+menu title Win (/pxelinux.cfg/win-efi.menu)
+#menu include pxelinux.cfg/graphics.conf
+
+
+# https://docs.j7k6.org/windows-10-pxe-installation/
+
+
+# Thu Jan 31 23:43:44 UTC 2019
+label win
+  menu label win
+  linuxefi 1/win/WIN10PE_USB/bootmgr.efi
+  text help
+  1/win/WIN10PE_USB/bootmgr.efi
+  ipconfig; net use z: \\pixi-efi\w10-1809; z:\setup.exe
+  endtext
+
+
+label main
+        menu label E^xit to main menu
+	kernel menu.c32
+        append pxelinux.cfg/default

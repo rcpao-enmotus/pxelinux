@@ -84,6 +84,18 @@ label ubuntu
 	Ubuntu desktop and server
 	endtext
 
+label win
+        menu label ^Win
+	#fail kernel /efi64/menu.c32
+	#fail kernel efi64/menu.c32
+	kernel menu.c32 #pass
+        #pass: append pxelinux.cfg/graphics.conf pxelinux.cfg/win-efi.menu
+        #fail: append win-efi.menu
+        append pxelinux.cfg/win-efi.menu
+	text help
+	win
+	endtext
+
 # tftp server ip: 172.17.2.35
 # filename: /vmware/esxi500/pxefiles/pxelinux.0
 #label vmware 

@@ -18,8 +18,7 @@ label KB3AIK_EN.iso_winpe.iso
   append iso raw
   text help
   https://docs.j7k6.org/windows-10-pxe-installation/
-  Win Automated Installation Kit (AIK) for Win 7
-  Win PE bootable ISO KB3AIK_EN.iso_winpe.iso
+  Win 7 Automated Installation Kit (WAIK) WinPE KB3AIK_EN.iso_winpe.iso
   ipconfig; net use z: \\pixi-efi\w10-1809; z:\setup.exe
   endtext
 

@@ -81,6 +81,14 @@ label ubuntu
 	Ubuntu desktops and servers
 	endtext
 
+label Win
+        menu label ^Win
+	kernel menu.c32
+        append pxelinux.cfg/graphics.conf pxelinux.cfg/win.menu
+	text help
+	Windows PE, 10
+	endtext
+
 # tftp server ip: 172.17.2.35
 # filename: /vmware/esxi500/pxefiles/pxelinux.0
 label vmware 
