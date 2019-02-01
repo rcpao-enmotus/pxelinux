@@ -12,7 +12,7 @@ menu title Win (/pxelinux.cfg/win-efi.menu)
 
 # Thu Jan 31 23:43:44 UTC 2019
 label win
-  menu label win
+  menu label win FAIL:bootmgr.efi must be loaded directly, not syslinux.efi
   linuxefi 1/win/WIN10PE_USB/bootmgr.efi
   text help
   1/win/WIN10PE_USB/bootmgr.efi
